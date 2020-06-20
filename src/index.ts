@@ -2,6 +2,8 @@ import * as fs from "fs";
 import * as path from "path";
 import { isPlugin, IPlugin } from "./IPlugin";
 
+//https://quachcuong.com/2019/09/26/typescipt-how-to-dynamic-import-anything-in-typescript/
+
 async function getPlugns(): Promise<string[]> {
   return new Promise<string[]>((resolve, reject) => {
     let plugins: string[] = [];
@@ -24,15 +26,5 @@ async function getPlugns(): Promise<string[]> {
       const plugin = module as IPlugin;
       plugin.log("Test");
     }
-    // console.log(plugin);
-    /*for (let bla in plugin) {
-      console.log("bla", bla == "Plugin2");
-      if (bla == "Plugin2") {
-        console.log("Plugin2", plugin[bla]);
-        console.log("Plugin2 test", new plugin[bla]().log("AAAAA"));
-      }
-    }*/
-    //console.log(pluginult, isPlugin(plugin.default));
-    //console.log(plugin.log);
   });
 })();
