@@ -4,11 +4,15 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "start": "tsc && node dist/index.js"
+    "clean": "rimraf dist/",
+    "build": "npm run clean && tsc && copyfiles -f src/plugins/complexplugin/test.txt dist/plugins/complexplugin",
+    "start": "npm run build && node dist/index.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^14.0.13"
+    "@types/node": "^14.0.13",
+    "copyfiles": "^2.3.0",
+    "rimraf": "^3.0.2"
   }
 }

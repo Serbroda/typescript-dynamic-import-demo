@@ -38,7 +38,7 @@ async function getPlugns(): Promise<string[]> {
         if (isPlugin(module)) {
           const plugin = module as IPlugin;
           plugin.log("Test");
-          console.log(plugin.loadFile());
+          //console.log(plugin.loadFile());
         }
       }
     }
